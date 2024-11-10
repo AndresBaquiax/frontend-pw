@@ -242,6 +242,9 @@
     "Inventario":{
       "text": "Inventario de productos"
     },
+    "Ubicaciones":{
+      "text": "Ubicaciones"
+    },
     "multilevel": {
       "text": "Multi Level",
       "list": {

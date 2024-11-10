@@ -10,6 +10,11 @@ export const menuItems = [
         link: '/Inventario'
     },
     {
+        id: 94,
+        label: "menuitems.Ubicaciones.text",
+        link: '/Ubicaciones'
+    },
+    {
         id: 2,
         label: 'menuitems.dashboard.text',
         icon: 'ri-dashboard-line',

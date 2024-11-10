@@ -88,6 +88,14 @@ export default [
         component: () => import('../views/pages/Inventario/Inventario.vue')
     },
     {
+        path: '/Ubicaciones',
+        name: 'Ubicaciones',
+        meta: {
+            authRequired: true,
+        },
+        component: () => import('../views/pages/Ubicaciones/Ubicaciones.vue')
+    },
+    {
         path: '/chat',
         name: 'Chat',
         meta: {
