@@ -21,7 +21,7 @@ export default {
       producto: '',
       tienda: '',
       stock: '',
-      title: "Basic Tables",
+      title: "Ubicaciones",
       items: [
         {
           text: "Tables",
@@ -97,6 +97,7 @@ export default {
       this.producto = inventario.idproducto;
       this.tienda = inventario.idtienda;
       this.stock = inventario.stock;
+      this.$refs.modalActualizar.show();
     },
     EnviarActualizar(){
       const request = 'http://127.0.0.1:8000/inventarios/' + this.idinventario;
@@ -117,6 +118,7 @@ export default {
     },
     Eliminar(inventario){
       this.idinventario = inventario.idinventario;
+      this.$refs.modalEliminar.show();
     },
     EnviarEliminar(){
       const request = 'http://127.0.0.1:8000/inventarios/' + this.idinventario;
@@ -138,11 +140,12 @@ export default {
   <Layout>
     <PageHeader :title="title" :items="items" />
 
+    <!--Tabla Tiendas-->
     <div class="row">
-        <div class="col-lg-4">
+      <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Tiendas actuales:</h4>
+            <h4 class="card-title">Tiendas actuales</h4>
 
             <div class="table-responsive">
               <table class="table table-striped mb-0">
@@ -165,12 +168,17 @@ export default {
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-lg-8">
+    <!--Tabla Ubicaciones-->
+    <div class="row">
+      <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Ubicaciones</h4>
-            <button v-b-modal.modal-insertar class="btn btn-primary">Insertar</button>
+            <h4 class="card-title">Ubicaciones de los productos</h4>
+            <button v-b-modal.modal-insertar class="btn btn-success mb-2">
+              <i class="mdi mdi-plus me-2"></i>Agregar ubicacion
+            </button>
 
             <div class="table-responsive">
               <table class="table mb-0">
@@ -191,8 +199,12 @@ export default {
                     <td>{{ inventario.idtienda }}</td>
                     <td>{{ inventario.stock }}</td>
                     <td>
-                      <button v-b-modal.modal-actualizar class="btn btn-primary" @click=Actualizar(inventario)>Editar</button>
-                      <button v-b-modal.modal-eliminar class="btn btn-danger" @click=Eliminar(inventario)>Eliminar</button>
+                      <a class="me-3 text-primary" href="javascript:void(0);" @click="Actualizar(inventario)">
+                        <i class="mdi mdi-pencil font-size-18"></i>
+                      </a>
+                      <a class="me-3 text-danger" href="javascript:void(0);" @click="Eliminar(inventario)">
+                        <i class="mdi mdi-trash-can font-size-18"></i>
+                      </a>
                     </td>
                   </tr>
                 </tbody>
@@ -254,7 +266,7 @@ export default {
     <!-- Modal eliminar-->
     <div>
       <BRow>
-        <BModal ref="modalEliminar" id="modal-eliminar" title="Eliminar Ubicacion:" title-class="font-18" hide-footer>
+        <BModal ref="modalEliminar" id="modal-eliminar" title="Eliminar Ubicacion" title-class="font-18" hide-footer>
           <h5>Datos</h5>
           <form>
             <div>

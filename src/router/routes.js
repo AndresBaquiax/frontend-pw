@@ -96,6 +96,14 @@ export default [
         component: () => import('../views/pages/Ubicaciones/Ubicaciones.vue')
     },
     {
+        path: '/Cotizaciones',
+        name: 'Cotizaciones',
+        meta: {
+            authRequired: true,
+        },
+        component: () => import('../views/pages/Cotizaciones/Cotizaciones.vue')
+    },
+    {
         path: '/chat',
         name: 'Chat',
         meta: {

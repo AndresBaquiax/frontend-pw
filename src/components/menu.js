@@ -15,6 +15,11 @@ export const menuItems = [
         link: '/Ubicaciones'
     },
     {
+        id: 93,
+        label: "menuitems.Cotizaciones.text",
+        link: '/Cotizaciones'
+    },
+    {
         id: 2,
         label: 'menuitems.dashboard.text',
         icon: 'ri-dashboard-line',
