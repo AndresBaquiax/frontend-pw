@@ -104,6 +104,14 @@ export default [
         component: () => import('../views/pages/Cotizaciones/Cotizaciones.vue')
     },
     {
+        path: '/Carrito',
+        name: 'Carrito',
+        meta: {
+            authRequired: true,
+        },
+        component: () => import('../views/pages/Carrito/Carrito.vue')
+    },
+    {
         path: '/chat',
         name: 'Chat',
         meta: {

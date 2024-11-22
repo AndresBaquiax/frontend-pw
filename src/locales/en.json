@@ -1,7 +1,7 @@
 {
   "navbar": {
     "search": {
-      "text": "Search..."
+      "text": "Buscar..."
     },
     "dropdown": {
       "megamenu": {
@@ -247,6 +247,9 @@
     },
     "Cotizaciones":{
       "text": "Cotizaciones"
+    },
+    "Carrito":{
+      "text": "Tienda en linea"
     },
     "multilevel": {
       "text": "Multi Level",

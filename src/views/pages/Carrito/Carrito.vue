@@ -29,14 +29,14 @@ export default {
       categoria: '',
       imagen: null,
 
-      title: "Cotizaciones",
+      title: "Tienda",
       items: [
         {
           text: "Home",
           href: "/"
         },
         {
-          text: "Cotizaciones",
+          text: "Tienda",
           active: true
         }
       ]
@@ -102,7 +102,7 @@ export default {
                 </li>
               </ul>
               <div>
-                <button class="btn btn-primary">Cotizar</button>
+                <button class="btn btn-primary">Pagar</button>
               </div>
             </BModal>
             <div>
@@ -130,7 +130,7 @@ export default {
                     <div class="product-box">
                         <div class="product-img">
                         <a href="#" @click.prevent="agregarAlCarrito(producto)">
-                            <i class="mdi mdi-plus me-2"> Cotizar</i>
+                            <i class="mdi mdi-plus me-2"> Agregar</i>
                         </a>
                         <img :src="producto.imagen" alt="Imagen del producto" class="img-fluid mx-auto d-block" width="100%">
                     </div>
